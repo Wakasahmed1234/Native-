@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { StyleSheet, Text, View, Pressable} from "react-native";
 import { TextInput } from "react-native";
@@ -10,8 +9,6 @@ const Username = ({ navigation }) => {
     <View style={styles.maincontainer}>
       <View style={styles.container}>
         <Text style={styles.header}>SignUp</Text>
-
-       
 
         <View style={styles.inputcontainer}>
           <Text style={styles.subheading}>Full Name</Text>

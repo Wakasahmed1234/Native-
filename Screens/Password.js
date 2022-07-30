@@ -12,14 +12,13 @@ const Password = ({ navigation, route }) => {
   return (
     <View style={styles.maincontainer}>
       <View style={styles.container}>
-     
 
         <View style={styles.inputcontainer}>
           <Text style={styles.subheading}>Password</Text>
 
           <TextInput
             style={styles.inputstyle}
-            placeholder=" Enter Your Password"
+            placeholder=" Enter Your Password like (qWeras34)"
             secureTextEntry={true}
             value={Password}
             onChangeText={(actualData) => setPassword(actualData)}

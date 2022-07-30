@@ -1,34 +1,33 @@
 import { View, Text, Alert } from "react-native";
 import React from "react";
-
+import axios from "axios";
 import { StyleSheet, TouchableOpacity } from "react-native";
 
-const Account = ({ route }) => {
+const Account = ({ navigation, route }) => {
   const payload = route.params.payloadInPassword;
 
   console.log(payload)
 
   const callApi= () => {
-      alert(`Welcome ${payload.username}`)
+    navigation.navigate("Welcome", { payload})
 
-    //   axios.post('http://localhost:3011/v1/auth/register', {
-        
-        
-    //     fullName: "mursaleen kha",
-    //     password: "password1",
-    //     phone: "+923090407967",
-    //     role: [
-    //       "guest"
-    //     ],
-    //     status: "isActive"
-    // })
-    // .then(result => {
-    //   alert('Succesfull')
-    //   console.log(result.data);
-    // })
-    // .catch(error => {
-    //   alert('Service Error')
-    // })
+      axios.post('http://localhost:3011/v1/auth/register', 
+      {
+        fullName:payload.username,
+        password:payload.password,
+        phone: payload.phone,
+        role: [
+          "guest"
+        ],
+        status: "isActive"
+    }
+    )
+    .then(result => {
+      console.log(result.data);
+    })
+    .catch(error => {
+      console.log(error);
+    })
   };
 
   return (
